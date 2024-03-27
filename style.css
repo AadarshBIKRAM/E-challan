@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+.wrapper {
+    width: 320px;
+    background-color: #4169e1; /* Royal blue background */
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: #fff; /* White text color */
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    background: #fff; /* White input background */
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #333; /* Dark text color */
+    padding: 15px 20px;
+}
+
+.input-box input::placeholder {
+    color: #999; /* Light gray placeholder color */
+}
+
+.input-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa; /* Light icon color */
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #fff; /* White button background */
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 16px;
+    color: #4169e1; /* Royal blue text color */
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #e1e0e0; /* Light gray hover background */
+}
+.center {
+    position: relative; 
+    /* Change from absolute to relative */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Add some space between the form and the touch ID section */
+}
+
+.center h1 {
+    font-size: 24px; /* Adjusted font size */
+    margin-bottom: 10px; /* Add some space below the heading */
+}
+
+.center .fingerprint,
+.center .icon-success {
+    width: 100px; /* Adjusted width */
+    height: 100px; /* Adjusted height */
+    margin-bottom: 10px; /* Add some space between the elements */
+}
+
+.center .icon-success {
+    position: absolute;
+    top: 40px;
+}
+
+.center .icon-success circle {
+    transform-origin: 50% 50%;
+    transform: scale(0);
+    transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.center .icon-success path {
+    opacity: 0;
+    transition: stroke-dashoffset 350ms 100ms ease;
+}
+
+.center.success .fingerprint {
+    transform: scale(0);
+}
+
+.center.success .icon-success circle {
+    transform: scale(1);
+}
+
+.center.success .icon-success path {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    transition: opacity 0s, stroke-dashoffset 0.5s;
+}
+
+.scan,
+.scan-success {
+    font-size: 14px; /* Adjusted font size */
+    color: #ffffff; /* Dark gray color */
+}
